@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <img class="main-image" :src="imageUrl"/>
+    <img class="main-image" :src="product.imageUrl"/>
     <div class="overlay-container">
     <div class="overlay">
-      <h3>Lorem ipsum dolor sit</h3>
-      <img class="logo" src="../../../assets/logos/brignoli-grey.svg"/>
-      <div class="price">from $12/meter</div>
+      <h3>{{product.title}}</h3>
+      <img class="logo" :src="product.logo"/>
+      <div class="price">from ${{product.price}}/meter</div>
       <div class="circles">
         <div class="circle red"></div>
         <div class="circle grey"></div>
@@ -21,7 +21,7 @@
 <script>
 export default {
   props: {
-    imageUrl: String
+    product: Object
   }
 }
 </script>

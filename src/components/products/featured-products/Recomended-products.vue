@@ -8,8 +8,8 @@
         </div>
       </div>
     <div class="image-container">
-    <div class="feature-product-container" :key="image" v-for="image in images">
-      <FeaturedProduct :imageUrl="image"/>
+    <div class="feature-product-container" :key="product.id" v-for="product in products">
+      <FeaturedProduct :product="product"/>
     </div>
   </div>
   </div>
@@ -22,11 +22,35 @@ export default {
   components: {
     FeaturedProduct
   },
-  data: () => ({images: [
-      require("../../../assets/images/featured-products/image1.jpeg"),
-      require("../../../assets/images/featured-products/image2.jpeg"),
-      require("../../../assets/images/featured-products/image3.jpeg"),
-      require("../../../assets/images/featured-products/image4.jpeg"),
+  data: () => ({products: [
+      {
+        title: 'Lorem ipsum dolor sit',
+        id: 1,
+        price: 12,
+        imageUrl: require("../../../assets/images/featured-products/image1.jpeg"),
+        logo: require("../../../assets/logos/brignoli-grey.svg") 
+      },
+      {
+        title: 'Lorem ipsum dolor sit',
+        id: 2,
+        price: 12,
+        imageUrl: require("../../../assets/images/featured-products/image2.jpeg"),
+        logo: require("../../../assets/logos/brignoli-grey.svg") 
+      },
+      {
+        title: 'Lorem ipsum dolor sit',
+        id: 3,
+        price: 12,
+        imageUrl: require("../../../assets/images/featured-products/image3.jpeg"),
+        logo: require("../../../assets/logos/brignoli-grey.svg") 
+      },
+      {
+        title: 'Lorem ipsum dolor sit',
+        id: 4,
+        price: 12,
+        imageUrl: require("../../../assets/images/featured-products/image4.jpeg"),
+        logo: require("../../../assets/logos/brignoli-grey.svg") 
+      }
     ]})
 }
 </script>
