@@ -32,7 +32,6 @@ export default {
       scroller.scrollLeft -= 200
       this.disableScrollIcon('right', currentScrollValue)
     },
-
     disableScrollIcon(side, compare) {
       const scroller = document.getElementById('list');
       const otherSide = side === 'left' ? 'right' : 'left'
@@ -57,7 +56,7 @@ export default {
   }
 
   .disabled {
-    color: grey;
+    opacity: 0.2
   }
 
 

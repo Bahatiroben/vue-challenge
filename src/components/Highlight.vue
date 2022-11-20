@@ -21,7 +21,7 @@
 </script>
 
 <style scoped>
-  @import url('https://fonts.cdnfonts.com/css/bodonisbulemy');
+  
                 
   .highlight-primary-section div {
     font-family: bodoni moda;

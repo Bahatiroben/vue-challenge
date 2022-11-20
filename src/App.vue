@@ -2,19 +2,21 @@
   <Header/>
   <Nav/>
   <Body/>
-  <router-view/>
+  <Footer/>
 </template>
 
 <script>
   import Header from '@/components/Header.vue';
   import Nav from '@/components/Nav.vue';
   import Body from '@/components/Body.vue';
+  import Footer from '@/components/footer/Footer.vue'
   export default {
     name: 'App',
     components: {
       Header,
       Nav,
-      Body
+      Body,
+      Footer
     }
   }
 </script>
