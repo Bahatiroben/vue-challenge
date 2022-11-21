@@ -24,4 +24,15 @@ export default {
     margin: 2rem 0rem;
     opacity: 0.5;
   }
+
+  @media screen and (max-width: 666px) {
+    .container {
+      flex-wrap: wrap;
+      margin-bottom: 0px;
+    }
+
+    .container img {
+      padding: 10px 0px;
+    }
+  }
 </style>

@@ -1,11 +1,10 @@
 <template>
-  <div class="container">
-    <img class="main-image" :src="product.imageUrl"/>
+  <div :style="style" class="container">
     <div class="overlay-container">
     <div class="overlay">
       <h3>{{product.title}}</h3>
-      <img class="logo" :src="product.logo"/>
-      <div class="price">from ${{product.price}}/meter</div>
+      <img class="logo mobile-hidden" :src="product.logo"/>
+      <div class="price mobile-hidden">from ${{product.price}}/meter</div>
       <div class="circles">
         <div class="circle red"></div>
         <div class="circle grey"></div>
@@ -14,14 +13,20 @@
         <div>+20</div>
       </div>
     </div>
-  </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'FeaturedProduct',
   props: {
     product: Object
+  },
+  computed: {
+    style() {
+      return `background-image: url("${this.product.imageUrl}")`
+    }
   }
 }
 </script>
@@ -29,17 +34,16 @@ export default {
 <style scoped>
   .container {
     width: 100%;
-    display: block;
-    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0px;
+    padding: 0px;
+    flex-basis: 24%;
   }
 
   h3 {
     font-weight: 700;
     margin-top: 15px;
-  }
-
-  .main-image {
-    width: 100%
   }
 
   .price {
@@ -52,35 +56,37 @@ export default {
     padding: 10px;
   }
 
-  .overlay-container {
-    position: absolute;
-    z-index: 1;
-    min-height: 100%;
-    width: 100%;
-    top: 0;
-    background-color: transparent;
-    opacity: 0;
-  }
 
   .overlay-container:hover {
     opacity: 1
+  }
+
+  .overlay-container {
+    background-color: transparent;
+    width: 100%;
+    font-size: 14px;
+    height: 50vh;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    opacity: 0;
   }
 
   .overlay {
     background-color: white;
     width: 100%;
     font-size: 14px;
-    position: absolute;
-    top: 62%;
-    min-height: 34%;
+    min-height: 36%;
   }
 
   .overlay:hover {
-    opacity: 1;
+    opacity: 1
   }
 
   .overlay-hidden {
-
+    opacity: 0;
   }
 
   .circles {
@@ -89,6 +95,7 @@ export default {
     width: 80%;
     margin: auto;
     font-size: 14px;
+    padding-bottom: 10px;
   }
 
   .circle {
@@ -111,5 +118,16 @@ export default {
 
   .black {
     background-color: black;
+  }
+
+  @media screen and (max-width: 666px) {
+    .container {
+    flex-basis: 100%;
+  }
+
+  .overlay-container {
+    height: 60vh;
+    opacity: 1;
+  }
   }
 </style>

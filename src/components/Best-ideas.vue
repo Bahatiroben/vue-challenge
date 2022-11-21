@@ -32,6 +32,7 @@ export default {
     color: #FFFFFF;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .best-ideas-image-container {
@@ -40,14 +41,15 @@ export default {
 
   .best-ideas-container {
     background-color: #1E1E1E;
-    flex-basis: 40%;
-    margin: 0px 0px 0.5% 2px;
+    flex-basis: 39.5%;
+    margin: 0px 0px 5.6px 2px;
   }
 
   .best-ideas-container p {
     font-size: 16px;
     padding: 2rem;
   }
+
   img {
     width: 100%;
   }
@@ -80,5 +82,19 @@ export default {
     width: 150px;
     font-weight: 700;
     margin-left: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 666px) {
+
+    .best-ideas-image-container {
+    flex-basis: 100%;
+  }
+
+  .best-ideas-container {
+    flex-basis: 100%;
+  }
   }
 </style>

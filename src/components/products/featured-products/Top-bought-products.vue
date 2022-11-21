@@ -36,7 +36,8 @@ export default {
     margin-bottom: 20px;
   }
   .container-top-products {
-    width: 60%;
+    flex-basis: 40%;
+    margin: auto;
   }
 
   .top-bought-description p {
@@ -48,6 +49,8 @@ export default {
     margin: auto;
     justify-content: space-between;
     padding: 5rem 5rem 0rem 5rem;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   img {
@@ -56,6 +59,25 @@ export default {
   }
 
   .image-container {
-    width: 100%;
+    flex-basis: 60%;
   }
+
+  @media screen and (max-width: 666px) {
+    .container {
+    width: 90%;
+    padding: 0px;
+    margin: auto;
+  }
+  .container-top-products {
+    width: 90%;
+  }
+
+  .image-container {
+    flex-basis: 100%;
+  }
+
+  .container-top-products {
+    flex-basis: 100%;
+  }
+}
 </style>

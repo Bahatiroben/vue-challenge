@@ -41,4 +41,21 @@
     line-height: 24px;
     padding: 10px;
    }
+
+   @media screen and (max-width: 666px) {
+    .highlight-secondary-section {
+      width: 90%;
+      font-size: 14px;
+      line-height: 17px;
+      padding: 10px;
+    }
+
+    .highlight-primary-section div {
+      font-size: 18px;
+      font-weight: 700;
+      width: 90%;
+      padding: 48px 0px 10px 0px;
+      line-height: 27px;
+  }
+   }
 </style>

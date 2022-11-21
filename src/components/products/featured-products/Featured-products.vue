@@ -2,10 +2,8 @@
   <div class="container">
     <h1>Featured products</h1>
     <div class="image-container">
-    <div class="feature-product-container" :key="product.id" v-for="product in products">
-      <FeaturedProduct :product="product"/>
+      <FeaturedProduct :key="product.id" v-for="product in products" :product="product"/>
     </div>
-  </div>
   </div>
 </template>
 
@@ -62,6 +60,7 @@
     padding-top: 5%;
     padding-bottom: 5%;
     margin-top: 5%;
+    width: 100%;
   }
   .image-container {
     display: flex;
@@ -70,6 +69,8 @@
     justify-content: space-between;
     background-color: #EDEAE6;
     padding: 0rem!;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   .feature-product-container:nth-child(2) {
     padding-right: 20px;
@@ -79,5 +80,11 @@
   }
   .feature-product-container:nth-child(4) {
     padding-left: 20px;
+  }
+
+  @media screen and (max-width: 666px) {
+    .image-container {
+    width: 90%;
+  }
   }
 </style>

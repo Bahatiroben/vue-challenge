@@ -20,7 +20,7 @@
       NavList
     },
 
-    data: () => ({options: ["SOLUTIONS", "NEWS", "PROJEsCTS", "SOLUTIONS", "NEWS", "PROJECTS"]}),
+    data: () => ({options: ["SOLUTIONS", "NEWS", "PROJECTS", "ABOUT", "PRESS", "CONTACT", "TEXTURES", "INSPIRATION"]}),
     // methods: {
     //   created() {
     //     this.options = ["SOLUTIONS", "NEWS", "PROJECTS", "SOLUTIONS", "NEWS", "PROJECTS"]
@@ -55,6 +55,10 @@
     align-items: center;
   }
 
+  .main-logo img {
+    width: 100%;
+  }
+
   .nav-options {
     width: 80%;
   }
@@ -69,6 +73,27 @@
   .header-login img {
     position: relative;
     top: 2.5px;
+  }
+
+  @media screen and (max-width: 666px) {
+  .nav-options-section {
+    padding: 0px;
+    flex-direction: column;
+    flex-basis: 60%;
+  }
+
+  .main-logo {
+    padding: 0px;
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-container {
+    padding: 20px 0px;
+    font-size: 18px;
+  }
+
   }
 
 </style>

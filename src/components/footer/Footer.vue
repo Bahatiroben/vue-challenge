@@ -2,13 +2,14 @@
   <div class="container">
     <div class="container-1">
     <div class="top-part">
-      <img src="../../assets/logos/martineli-ginetto.logo.svg"/>
+      <div class="top-part-logo"></div>
       <div class="top-right">
-        <a class="top-right-item contacti">contacti</a>
+        <a class="top-right-item contacti hide-on-mobile">contacti</a>
         <img class="instagram top-right-item" src="../../assets/logos/instagram.logo.svg"/>
         <img class="facebook top-right-item" src="../../assets/logos/facebook.logo.svg"/>
       </div>
     </div>
+    <div class="separator first-separator" />
     <div class="services">
       <div class="services-description">
         Dal 1947 lo spirito imprenditoriale <strong>MARTINELLIGINETTO</strong> si fonda sulle competenze tecniche, 
@@ -19,8 +20,8 @@
     </div>
     <div class="separator" />
     <Clients/>
-    <div class="separator" />
-    <div class="footer-bottom-part">
+    <div class="separator hide-on-mobile" />
+    <div class="footer-bottom-part hide-on-mobile">
       <div>
         <a class="link privacy">Privacy</a>
         <a class="link cookie">Cookie policy</a>
@@ -74,11 +75,20 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
 
   .container {
     background-color: #1E1E1E;
     color: #FFFFFF;
+    width: 100%;
+  }
+
+  .top-part-logo {
+    background-image: url("../../assets/logos/martineli-ginetto.logo.svg");
+    min-width: 220px;
+    height: 100px;
+    background-repeat: no-repeat;
   }
 
   .container-1 {
@@ -104,6 +114,7 @@ export default {
     display: flex;
     justify-content: space-between;
     padding-top: 32px;
+    width: 100%;
   }
 
   .services-description {
@@ -134,5 +145,48 @@ export default {
 
   .cookie {
     padding-left: 2rem;
+  }
+
+  .first-separator {
+      visibility: hidden;
+    }
+
+  @media screen and (max-width: 666px) {
+    .top-part-logo {
+      min-width: 180px;
+      height: 40px;
+      background-repeat: no-repeat;
+      background-image: url("../../assets/logos/martineli-gineto-group.mobile.logo.svg");
+    }
+
+    .first-separator {
+      visibility: visible;
+    }
+
+    .container-1 {
+    width: 85%;
+    margin: auto;
+    padding-top: 2rem;
+  }
+
+  .top-right-item {
+    padding-top: 0px;
+  }
+
+  .services {
+    flex-wrap: wrap;
+  }
+
+  .services-description {
+    flex-basis: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 5px;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+
   }
 </style>
